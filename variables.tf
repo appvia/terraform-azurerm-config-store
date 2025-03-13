@@ -1,11 +1,19 @@
 variable "resource_group_name" {
   description = "The name of the resource group in which to create the storage account"
   type        = string
+  validation {
+    condition     = length(replace(lower(var.resource_group_name), "/[^a-z0-9]/", "")) > 0
+    error_message = "Resource group name must contain at least one alphanumeric character."
+  }
 }
 
 variable "name" {
   description = "The name suffix to use for the storage account (will be concatenated with resource group name)"
   type        = string
+  validation {
+    condition     = length(replace(lower(var.name), "/[^a-z0-9]/", "")) > 0
+    error_message = "Name must contain at least one alphanumeric character."
+  }
 }
 
 variable "location" {

@@ -9,6 +9,8 @@ Inspired from https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quic
 - Creates or uses an existing Azure Resource Group
 - Creates an Azure Storage Account with static website hosting enabled
 - Storage account name is derived by concatenating the resource group name and provided name suffix
+  - The module automatically ensures the name is valid and within Azure's length constraints (3-24 characters)
+  - Uses up to 16 characters from resource group name and up to 8 characters from name suffix
 - Creates JSON configuration blobs from provided key-value pairs
 - Each blob is named after the key and contains a JSON object with the specified properties
 - Module does not include provider configuration, allowing for flexible usage in various environments
