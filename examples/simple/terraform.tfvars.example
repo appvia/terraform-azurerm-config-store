@@ -1,0 +1,20 @@
+resource_group_name = "example-config-rg"
+name                = "config"
+location            = "eastus"
+create_resource_group = true
+
+tags = {
+  Environment = "Development"
+  Owner       = "DevOps Team"
+}
+
+config_values = {
+  "app1" = {
+    noun_value      = "system"
+    adjective_value = "reliable"
+  },
+  "app2" = {
+    noun_value      = "server"
+    adjective_value = "fast"
+  }
+} 
